@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #own
     'users.apps.UsersConfig',
     'crispy_forms',
+    'TM_niwe_project'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'TM_niwe_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,8 +81,12 @@ WSGI_APPLICATION = 'TM_niwe_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'DB1',
+        'USER':'postgres',
+        'PASSWORD':'leosmileaf18',
+        'HOST':'localhost',
+        'PORT':'5433'
     }
 }
 

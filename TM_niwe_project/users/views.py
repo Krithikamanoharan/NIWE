@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from . forms import UserRegisterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from . models import NIWETable
 
 
 
@@ -26,4 +27,8 @@ def register(request):
 @login_required()
 def profile(request):
     return render(request, 'users/profile.html')
+
+def showdata(request):
+    results = NIWETable.objects.all()
+    return render(request,'users/index.html',{"data":results})
 # Create your views here.

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <title>Fetch data from database</title>
+</head>
+<body>
+<center>
+    <h1>How to fetch records from db</h1>
+    </hr>
+    <table border="1">
+        <tr>
+            <th>NIWE id</th>
+            <th>NIWE sender mail</th>
+            <th>NIWE subject</th>
+            <th>NIWE receiver mail</th>
+            <th>NIWE cc mail</th>
+            <th>NIWE description</th>
+            <th>NIWE remarks</th>
+            <th>NIWE due date</th>
+        </tr>
+        {% for result in data%}
+        <tr>
+            <td>{{result.id}}</td>
+            <td>{{result.sendermail}}</td>
+            <td>{{result.subject}}</td>
+            <td>{{result.receivermail}}</td>
+            <td>{{result.ccmail}}</td>
+            <td>{{result.description}}</td>
+            <td>{{result.remarks}}</td>
+            <td>{{result.duedate}}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>
